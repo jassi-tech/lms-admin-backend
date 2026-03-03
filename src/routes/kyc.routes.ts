@@ -1,10 +1,9 @@
 import { Router } from 'express';
 import { requireAuth } from '../middleware/auth.middleware';
-import { proxyMiddleware } from '../lib/personalApi';
 
 const router = Router();
 
-// KYC verification routes — all protected
-router.get('/kyc/kyc-list/:limit/:offset', requireAuth, proxyMiddleware);
+// KYC verification// All kyc routes require authentication
+router.get('/kyc-list/:limit/:offset', requireAuth, (req, res) => res.status(200).json({ rows: [], count: 0 }));
 
 export default router;

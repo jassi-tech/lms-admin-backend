@@ -10,7 +10,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_here';
  */
 export const requireAuth = (req: Request, res: Response, next: NextFunction): void => {
   try {
-    const token = req.cookies?.token;
+    const token = req.cookies?.admin_token;
 
     if (!token) {
       res.status(401).json({ message: 'Unauthorized request' });
@@ -34,7 +34,7 @@ export const requireAuth = (req: Request, res: Response, next: NextFunction): vo
  */
 export const optionalAuth = (req: Request, res: Response, next: NextFunction): void => {
   try {
-    const token = req.cookies?.token;
+    const token = req.cookies?.admin_token;
     if (token) {
       const decoded = jwt.verify(token, JWT_SECRET) as AuthUser;
       req.user = decoded;

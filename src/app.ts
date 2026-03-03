@@ -52,8 +52,7 @@ app.use((req, _res, next) => {
 // ─── HEALTH CHECK ─────────────────────────────────────────────────────────────
 app.get('/', (_req, res) => {
   res.json({
-    message: 'LMS Admin API (Delegated) is running',
-    target: process.env.PERSONAL_BACKEND_URL,
+    message: 'LMS Admin API is running locally',
   });
 });
 

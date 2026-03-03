@@ -1,0 +1,17 @@
+{
+    "allowedAdmins": [
+        {
+            "email": "admin@example.com",
+            "name": "Super Admin"
+        },
+        {
+            "email": "bhurejasleen@gmail.com",
+            "name": "Admin",
+            "password": "admin123"
+        }
+    ],
+    "config": {
+        "otpExpiryMinutes": 10,
+        "otpLength": 6
+    }
+}
